@@ -1,20 +1,21 @@
 const React = require('react')
 const { showEnrolled } = require('../actions')
 const { connect } = require('react-redux')
+const Enrolled = require('./enrolled')
 
-const Counter = ({ count, dispatch }) => {
+const Counter = ({ displayEnrolled, dispatch }) => {
   return(
   <div>
-    <h1>Counter</h1>
+    <h1 style={{textAlign: 'center'}}>At A Glance</h1>
     <button onClick={() => dispatch(showEnrolled())}>Show Enrolled</button>
-    <h4>{ count }</h4>
+    { displayEnrolled && <Enrolled/> }
   </div>
   )
 }
 
-const mapStateToProps = ({ count }) => {
+const mapStateToProps = ({ displayEnrolled }) => {
   return {
-    count
+    displayEnrolled
   }
 }
 

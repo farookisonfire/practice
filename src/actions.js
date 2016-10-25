@@ -1,3 +1,3 @@
 exports.showEnrolled = () => {
-  return {type: 'SHOW_ENROLLEd'}
+  return {type: 'SHOW_ENROLLED'}
 }

@@ -1,7 +1,6 @@
 const { createStore } = require('redux')
 const reducer = require('./reducer')
-const initialState = require('./initial-state')
 
-const store = createStore(reducer, initialState)
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 module.exports = store
