@@ -8,7 +8,7 @@ module.exports = function createApp(db) {
 
   app.use(bodyParser.json())
   // app.use(express.static('public'))
-  app.use('/users', router(db))
+  app.use('/', router(db))
 
   return app
 }
