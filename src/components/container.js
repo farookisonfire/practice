@@ -3,7 +3,7 @@ const { showEnrolled } = require('../actions')
 const { connect } = require('react-redux')
 const Enrolled = require('./enrolled')
 
-const Counter = ({ displayEnrolled, dispatch }) => {
+const MainComponent = ({ displayEnrolled, dispatch }) => {
   return(
   <div>
     <h1 style={{textAlign: 'center'}}>At A Glance</h1>
@@ -19,4 +19,4 @@ const mapStateToProps = ({ displayEnrolled }) => {
   }
 }
 
-module.exports = connect(mapStateToProps)(Counter)
+module.exports = connect(mapStateToProps)(MainComponent)

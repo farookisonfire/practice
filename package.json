@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack --watch",
-    "serve": "webpack-dev-server"
+    "serve": "webpack-dev-server",
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">= 6"
+  },
   "bugs": {
     "url": "https://github.com/farookkhan/heart-rate/issues"
   },
@@ -29,7 +33,10 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
     "highcharts": "^5.0.0",
+    "mongodb": "^2.2.11",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",

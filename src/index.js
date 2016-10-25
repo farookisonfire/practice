@@ -1,14 +1,18 @@
-const React = require('react')
-const ReactDOM = require('react-dom')
-const { Provider } = require('react-redux')
-const Counter = require('./components/container')
-const store = require('./store')
+const { MongoClient } = require('mongodb')
+const createApp = require('./express')
 
-ReactDOM.render(
-  <Provider store = { store }>
-    <div>
-      <Counter/>
-    </div>
-  </Provider>,
-  document.getElementById('app')
-)
+const MONGO_URI = 'mongodb://localhost:27017/six'
+const PORT = 3001
+
+MongoClient.connect(MONGO_URI, (err, db) => {
+  if (err) {
+    console.error(err)
+    process.exit(1)
+  }
+
+  const app = createApp(db)
+
+  app.listen(PORT, () => {
+    console.log('listening on Port: ' + PORT)
+  })
+})
